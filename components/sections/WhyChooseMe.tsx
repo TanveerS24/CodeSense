@@ -59,59 +59,13 @@ export default function WhyChooseMe() {
   return (
     <SectionWrapper id="why" className="bg-secondary/50">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Feature Cards */}
+        {/* Left Side - Illustration */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 order-2 md:order-1"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Why <span className="text-accent-blue">Choose Me</span>
-          </h2>
-
-          <div className="grid gap-4">
-            {reasons.map((reason, idx) => {
-              const colors = colorClasses[reason.color as keyof typeof colorClasses];
-              const Icon = reason.icon;
-
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  className={`glass border ${colors.border} rounded-xl p-5 transition-all ${colors.glow} cursor-default`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className={`text-3xl ${colors.icon} flex-shrink-0 mt-1`}>
-                      <Icon />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold text-text-primary">
-                        {reason.title}
-                      </h3>
-                      <p className="text-text-secondary text-sm leading-relaxed">
-                        {reason.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* Right Side - Illustration */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center order-1 md:order-2"
+          className="flex justify-center order-2 md:order-1"
         >
           <div className="relative">
             {/* Glowing background */}
@@ -157,11 +111,57 @@ export default function WhyChooseMe() {
                     transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
                     className="text-accent-purple"
                   >
-                    <FaBrain />
+                    <FaUserTie />
                   </motion.div>
                 </div>
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Right Side - Feature Cards */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8 order-1 md:order-2"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Why <span className="text-accent-blue">Choose Me</span>
+          </h2>
+
+          <div className="grid gap-4">
+            {reasons.map((reason, idx) => {
+              const colors = colorClasses[reason.color as keyof typeof colorClasses];
+              const Icon = reason.icon;
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className={`glass border ${colors.border} rounded-xl p-5 transition-all ${colors.glow} cursor-default`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`text-3xl ${colors.icon} flex-shrink-0 mt-1`}>
+                      <Icon />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold text-text-primary">
+                        {reason.title}
+                      </h3>
+                      <p className="text-text-secondary text-sm leading-relaxed">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SectionWrapper from '../SectionWrapper';
-import profileImage from '../images/mass photo.png';
+import profileImage from '../images/My Image.png';
 
 export default function About() {
   return (

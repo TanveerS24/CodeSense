@@ -56,13 +56,57 @@ export default function Teach() {
   return (
     <SectionWrapper id="teach">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Large Developer Symbol */}
+        {/* Left Side - Teaching Categories */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center order-2 md:order-1"
+          className="space-y-8 order-2 md:order-1"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold">
+            What I <span className="text-accent-green">Teach</span>
+          </h2>
+
+          <div className="space-y-6">
+            {teachingCategories.map((category, idx) => {
+              const colors = colorClasses[category.color as keyof typeof colorClasses];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="space-y-3"
+                >
+                  <h3 className={`text-xl font-semibold ${colors.text}`}>
+                    {category.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {category.items.map((item, itemIdx) => (
+                      <motion.div
+                        key={itemIdx}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className={`px-4 py-2 glass border-2 ${colors.border} ${colors.bg} rounded-lg transition-all cursor-default`}
+                      >
+                        <span className="text-text-primary font-medium">{item}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Right Side - Large Developer Symbol */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center order-1 md:order-2"
         >
           <div className="relative">
             {/* Glowing background */}
@@ -101,50 +145,6 @@ export default function Teach() {
             >
               11001100
             </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Right Side - Teaching Categories */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8 order-1 md:order-2"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            What I <span className="text-accent-green">Teach</span>
-          </h2>
-
-          <div className="space-y-6">
-            {teachingCategories.map((category, idx) => {
-              const colors = colorClasses[category.color as keyof typeof colorClasses];
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="space-y-3"
-                >
-                  <h3 className={`text-xl font-semibold ${colors.text}`}>
-                    {category.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {category.items.map((item, itemIdx) => (
-                      <motion.div
-                        key={itemIdx}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        className={`px-4 py-2 glass border-2 ${colors.border} ${colors.bg} rounded-lg transition-all cursor-default`}
-                      >
-                        <span className="text-text-primary font-medium">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
           </div>
         </motion.div>
       </div>

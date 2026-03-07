@@ -58,6 +58,10 @@ Make sure your EmailJS template includes these variables:
 - `{{message}}` - Message content
 - `{{to_email}}` - Your email (stanveer1809@gmail.com)
 
+## Change your logo
+
+Replace the image in .app/components/images with your own image to replace mine
+
 ## 🏗️ Build for Production
 
 ```bash
