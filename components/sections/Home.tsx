@@ -3,13 +3,6 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper';
 
-const codeSymbols = [
-  { symbol: '{ }', x: 20, y: 20, delay: 0 },
-  { symbol: '</>', x: 80, y: 40, delay: 0.2 },
-  { symbol: '( )', x: 60, y: 70, delay: 0.4 },
-  { symbol: '[ ]', x: 30, y: 60, delay: 0.6 },
-];
-
 export default function Home() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -108,32 +101,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating Code Symbols */}
-          {codeSymbols.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -20, 0],
-              }}
-              transition={{
-                opacity: { delay: 0.6 + item.delay, duration: 0.5 },
-                scale: { delay: 0.6 + item.delay, duration: 0.5 },
-                y: {
-                  delay: 1 + item.delay,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
-              }}
-              className="absolute text-2xl lg:text-3xl font-mono font-bold text-accent-purple/70"
-              style={{ left: `${item.x}%`, top: `${item.y}%` }}
-            >
-              {item.symbol}
-            </motion.div>
-          ))}
         </motion.div>
       </div>
     </SectionWrapper>

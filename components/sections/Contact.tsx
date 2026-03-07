@@ -17,8 +17,8 @@ const contactMethods = [
   {
     icon: FaInstagram,
     label: 'Instagram',
-    value: '@epicblue06',
-    link: 'https://www.instagram.com/epicblue06/',
+    value: '@codesense.me',
+    link: 'https://www.instagram.com/codesense.me/#',
     color: 'purple',
   },
   {

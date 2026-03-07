@@ -1,59 +1,65 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaRobot, FaChartLine, FaCode, FaHome, FaChartBar, FaBrain, FaTint, FaGraduationCap } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaMapMarkedAlt, FaNetworkWired, FaSeedling, FaBuilding, FaMagic, FaBrain, FaFileMedical, FaCloudSun } from 'react-icons/fa';
 import SectionWrapper from '../SectionWrapper';
 
 const completedProjects = [
   {
-    icon: FaRobot,
-    name: 'AI Sentiment Analysis Tool',
-    description: 'Real-time sentiment analysis with speech output and LED indicators.',
+    icon: FaCloudUploadAlt,
+    name: 'Sky-Port',
+    description: 'Cross Platform file sharing and version control system',
     color: 'green',
   },
   {
-    icon: FaChartLine,
-    name: 'Smart Retail Analytics Dashboard',
-    description: 'Cloud-powered analytics dashboard for sales and business insights.',
+    icon: FaMapMarkedAlt,
+    name: 'Sikkim-Tourism',
+    description: 'Developed at SIH-25 to boost tourism in Sikkim with personalized recommendations and virtual tours',
     color: 'blue',
   },
   {
-    icon: FaCode,
-    name: 'Pushdown Automaton Simulator',
-    description: 'Web-based simulator to visualize pushdown automata and balanced smiley checking.',
+    icon: FaNetworkWired,
+    name: 'Net Pulse',
+    description: 'Network monitoring and predictive anomaly detection system with auto-scaling',
     color: 'purple',
   },
   {
-    icon: FaHome,
-    name: 'Property Record Manager',
-    description: 'GUI-based system for managing property records with database integration.',
+    icon: FaSeedling,
+    name: 'Thrive',
+    description: 'A multi-purpose AI supported progress tracking and habit building platform',
     color: 'green',
   },
   {
-    icon: FaChartBar,
-    name: 'Stock Market Prediction',
-    description: 'Machine learning model using LSTM and sentiment analysis.',
+    icon: FaBuilding,
+    name: 'Inventory Manager',
+    description: 'A system for a UK-based housing company to manage owners, tenants, and rental agreements',
     color: 'blue',
   },
+  {
+    icon: FaMagic,
+    name: "Genie Sketch",
+    description: 'AI-powered Image generation and sharing platform',
+    color: 'purple',
+  }
 ];
 
 const developmentProjects = [
   {
     icon: FaBrain,
-    name: 'AI Programming Tutor',
-    description: 'Interactive AI-powered learning platform for programming education.',
+    name: 'Skill-Nest',
+    description: 'DSA learning platform using Spring Boot and Kubernetes for scalable load balancing',
     color: 'purple',
   },
   {
-    icon: FaTint,
-    name: 'Smart Water Management System',
-    description: 'IoT-based system for efficient water resource management.',
+    icon: FaFileMedical,
+    name: 'Policy Lens',
+    description: 'Rag based Healthcare policy analysis and recommendation system',
     color: 'blue',
   },
   {
-    icon: FaGraduationCap,
-    name: 'Developer Learning Platform',
-    description: 'Comprehensive platform for learning software development.',
+    icon: FaCloudSun,
+    name: 'Micro Weather Station',
+    description: 'IOT based real-time weather monitoring system with data visualization',
     color: 'green',
   },
 ];
