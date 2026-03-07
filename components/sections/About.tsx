@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import SectionWrapper from '../SectionWrapper';
+import profileImage from '../images/mass photo.png';
 
 export default function About() {
   return (
@@ -20,16 +22,14 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/30 to-accent-purple/30 rounded-2xl blur-2xl"></div>
             
             {/* Profile image container */}
-            <div className="relative glass rounded-2xl p-2 glow-blue">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-green/20 to-accent-blue/20 rounded-xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto rounded-full bg-gradient-to-br from-accent-green to-accent-blue flex items-center justify-center text-7xl md:text-8xl lg:text-9xl font-bold text-primary">
-                    T
-                  </div>
-                  <div className="text-2xl md:text-3xl font-bold text-accent-green font-mono">
-                    Tanveer
-                  </div>
-                </div>
+            <div className="relative glass rounded-full p-2 glow-blue">
+              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-green/20 to-accent-blue/20 rounded-full flex items-center justify-center overflow-hidden">
+                <Image 
+                  src={profileImage}
+                  alt="Tanveer - Developer and Educator"
+                  className="w-full h-full object-cover rounded-full"
+                  priority
+                />
               </div>
             </div>
           </div>

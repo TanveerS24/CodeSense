@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaUserGraduate, FaProjectDiagram, FaTrophy, FaUsers, FaCode, FaBrain } from 'react-icons/fa';
+import { FaUserGraduate, FaTrophy, FaUsers, FaCode, FaBrain, FaUserTie } from 'react-icons/fa';
 import SectionWrapper from '../SectionWrapper';
 
 const reasons = [
@@ -12,12 +12,6 @@ const reasons = [
     color: 'green',
   },
   {
-    icon: FaProjectDiagram,
-    title: 'Guidance for College Projects',
-    description: 'Expert help with academic projects and assignments.',
-    color: 'blue',
-  },
-  {
     icon: FaTrophy,
     title: 'Hackathon Preparation',
     description: 'Learn strategies and skills to excel in competitive coding.',
@@ -25,8 +19,8 @@ const reasons = [
   },
   {
     icon: FaUsers,
-    title: 'Support for Technical Events',
-    description: 'Preparation for technical interviews and tech fests.',
+    title: 'We Provide Lifetime support',
+    description: 'Join a community of learners and get help whenever you need it.',
     color: 'green',
   },
   {
@@ -36,9 +30,9 @@ const reasons = [
     color: 'blue',
   },
   {
-    icon: FaBrain,
-    title: 'Focus on Strong Problem Solving',
-    description: 'Develop logical thinking and algorithmic reasoning.',
+    icon: FaUserTie,
+    title: 'Interview Preparation',
+    description: 'Get guidance and practice to prepare for technical interviews and coding rounds.',
     color: 'purple',
   },
 ];

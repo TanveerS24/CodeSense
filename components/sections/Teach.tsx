@@ -16,7 +16,7 @@ const teachingCategories = [
   },
   {
     title: 'Web Development',
-    items: ['MERN Stack', 'Next.js', 'React Native', 'Expo'],
+    items: ['MERN Stack', 'Next.js', 'React Native', 'Expo', 'Docker', 'Kubernetes'],
     color: 'purple',
   },
   {
