@@ -131,7 +131,7 @@ const courses = [
     id: 9,
     title: 'Interview Preparation',
     description: 'Prepare for technical interviews with structured practice and real-world problem solving.',
-    color: 'green',
+    color: 'purple',
     topics: [
       'Coding interview problem solving strategies',
       'Common data structure interview questions',
