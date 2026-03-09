@@ -3,27 +3,44 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'What I Teach', href: '#teach' },
-  { name: 'Why Choose Me', href: '#why' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '#home', id: 'home' },
+  { name: 'About', href: '#about', id: 'about' },
+  { name: 'What I Teach', href: '#teach', id: 'teach' },
+  { name: 'Courses', href: '/course', isRoute: true, id: 'course' },
+  { name: 'Why Choose Me', href: '#why', id: 'why' },
+  { name: 'Projects', href: '#projects', id: 'projects' },
+  { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Compute the active item ID for consistent animation
+  const getActiveItemId = () => {
+    if (pathname === '/course') {
+      return 'course';
+    }
+    return activeSection;
+  };
+
+  const activeItemId = getActiveItemId();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
+      // Only detect sections when on home page
+      if (pathname !== '/') return;
+
       // Detect active section
-      const sections = navItems.map(item => item.href.substring(1));
+      const sections = navItems.filter(item => !item.isRoute).map(item => item.id);
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -39,10 +56,37 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
-  const scrollToSection = (href: string) => {
+  // Handle navigation from course page back to sections
+  useEffect(() => {
+    if (pathname === '/') {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.substring(1);
+        setActiveSection(sectionId);
+      }
+    }
+  }, [pathname]);
+
+  const scrollToSection = (href: string, isRoute?: boolean) => {
+    // If it's a route link, navigate to it
+    if (isRoute) {
+      router.push(href);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // If we're on the course page and clicking a section, navigate to home first
+    if (pathname !== '/') {
+      router.push(`/${href}`);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // Otherwise, scroll to section on current page
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +108,8 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl md:text-2xl font-bold font-mono"
+            onClick={() => router.push('/')}
+            className="text-xl md:text-2xl font-bold font-mono cursor-pointer"
           >
             <span className="text-accent-green">&lt;</span>
             <span className="text-text-primary">Tanveer</span>
@@ -74,11 +119,11 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
+              const isActive = item.id === activeItemId;
               return (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => scrollToSection(item.href, item.isRoute)}
                   className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-text-secondary hover:text-text-primary transition-colors"
                 >
                   {item.name}
@@ -118,11 +163,11 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 space-y-3">
               {navItems.map((item) => {
-                const isActive = activeSection === item.href.substring(1);
+                const isActive = item.id === activeItemId;
                 return (
                   <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => scrollToSection(item.href, item.isRoute)}
                     className={`block w-full text-left px-4 py-2 rounded-lg transition-all ${
                       isActive
                         ? 'bg-accent-green/20 text-accent-green'

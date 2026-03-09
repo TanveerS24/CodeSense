@@ -4,6 +4,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FaLinkedin, FaInstagram, FaGithub, FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation';
 import SectionWrapper from '../SectionWrapper';
 
 const contactMethods = [
@@ -51,6 +52,7 @@ const colorClasses = {
 };
 
 export default function Contact() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,6 +60,27 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Handle URL params for pre-filled contact form
+  useEffect(() => {
+    const section = searchParams.get('section');
+    const message = searchParams.get('message');
+    
+    if (section === 'contact' && message) {
+      setFormData(prev => ({
+        ...prev,
+        message: decodeURIComponent(message),
+      }));
+      
+      // Scroll to contact section
+      setTimeout(() => {
+        const contactElement = document.getElementById('contact');
+        if (contactElement) {
+          contactElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [searchParams]);
 
   // Debug: Check if environment variables are loaded
   useEffect(() => {

@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+import { FaArrowRight } from 'react-icons/fa';
 import SectionWrapper from '../SectionWrapper';
 
 const teachingCategories = [
@@ -53,6 +55,8 @@ const colorClasses = {
 };
 
 export default function Teach() {
+  const router = useRouter();
+
   return (
     <SectionWrapper id="teach">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -98,6 +102,26 @@ export default function Teach() {
               );
             })}
           </div>
+
+          {/* Explore Courses Button */}
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            whileHover={{ scale: 1.05, x: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => router.push('/course')}
+            className="group flex items-center gap-3 px-8 py-4 bg-accent-green text-primary font-bold text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all"
+          >
+            <span>Explore All Courses</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </motion.div>
+          </motion.button>
         </motion.div>
 
         {/* Right Side - Large Developer Symbol */}
