@@ -7,130 +7,156 @@ import { useRouter } from 'next/navigation';
 const courses = [
   {
     id: 1,
-    title: 'Java Programming Mastery',
-    description: 'Master Java from basics to advanced OOP concepts',
+    title: 'Java Mastery',
+    description: 'Build a strong foundation in Java and master object-oriented programming used in real-world applications.',
     color: 'green',
     topics: [
-      'Core Java fundamentals and syntax',
-      'Object-Oriented Programming principles',
-      'Data structures and algorithms',
-      'Exception handling and file I/O',
-      'Collections framework',
-      'Multithreading and concurrency',
-    ],
+      'Java syntax, variables, and control structures',
+      'Object-Oriented Programming (OOP) concepts',
+      'Java standard libraries and core APIs',
+      'Exception handling and file I/O operations',
+      'Collections framework and generics',
+      'Multithreading and concurrency basics',
+      'Building small console and utility applications',
+      'Highly recommended for fresh graduates preparing for placements'
+    ]
   },
   {
     id: 2,
-    title: 'Python for Beginners',
-    description: 'Start your programming journey with Python',
+    title: 'Problem Solving with DSA',
+    description: 'Develop strong problem-solving skills using data structures and algorithms with the programming language of your choice.',
     color: 'blue',
     topics: [
-      'Python basics and syntax',
-      'Control flow and loops',
-      'Functions and modules',
-      'File handling and data processing',
-      'Introduction to popular libraries',
-      'Mini projects and exercises',
-    ],
+      'Algorithmic thinking and problem decomposition',
+      'Arrays, strings, and recursion',
+      'Linked lists, stacks, and queues',
+      'Trees, graphs, and traversal techniques',
+      'Sorting and searching algorithms',
+      'Dynamic programming and greedy techniques',
+      'Competitive programming and interview-style problems',
+      'Leetcode and HackerRank problem-solving practice'
+    ]
   },
   {
     id: 3,
-    title: 'Full-Stack MERN Development',
-    description: 'Build modern web applications with MongoDB, Express, React, Node.js',
+    title: 'Full Stack Development',
+    description: 'Learn to build complete web applications using modern frontend and backend technologies.',
     color: 'purple',
     topics: [
-      'Frontend with React.js',
-      'Backend API with Node.js and Express',
-      'MongoDB database design',
-      'Authentication and authorization',
-      'RESTful API development',
-      'Deployment and best practices',
-    ],
+      'HTML, CSS, and responsive web design',
+      'JavaScript fundamentals and browser APIs',
+      'Frontend architecture and component-based development',
+      'Backend development and server-side programming',
+      'Building and consuming REST APIs',
+      'Database design and integration',
+      'Deploying and maintaining full stack applications'
+    ]
   },
   {
     id: 4,
-    title: 'Next.js & React Native',
-    description: 'Create full-stack web and mobile applications',
+    title: '3D and Game Development',
+    description: 'Create 3D assets and interactive games using Blender and Unity.',
     color: 'green',
     topics: [
-      'Next.js App Router and server components',
-      'React Native mobile development',
-      'Cross-platform UI design',
-      'API routes and server actions',
-      'State management with modern tools',
-      'Building and deploying apps',
-    ],
+      '3D modeling fundamentals using Blender',
+      'Texturing, lighting, and rendering',
+      'Unity interface and scene setup',
+      'Game objects, physics, and collisions',
+      'Scripting gameplay with C#',
+      'Animations and character movement',
+      'Building and exporting playable games'
+    ]
   },
   {
     id: 5,
-    title: 'Game Development with Unity',
-    description: 'Create 2D and 3D games from scratch',
+    title: 'Frontend Tools and Frameworks',
+    description: 'Master modern tools used to build fast and scalable frontend applications.',
     color: 'blue',
     topics: [
-      'Unity interface and basics',
-      'C# scripting for games',
-      '2D and 3D game mechanics',
-      'Physics and collision systems',
-      'Animation and visual effects',
-      'Publishing your game',
-    ],
+      'Modern frontend workflows and tooling',
+      'TailwindCSS for rapid UI development',
+      'Vite for fast development environments',
+      'Svelte fundamentals and reactive components',
+      'Component-based architecture',
+      'Performance optimization techniques',
+      'Building modern responsive interfaces'
+    ]
   },
   {
     id: 6,
-    title: '3D Modeling with Blender',
-    description: 'Learn professional 3D modeling and animation',
+    title: 'Database Systems',
+    description: 'Understand how databases work and learn to design and manage efficient data storage systems.',
     color: 'purple',
     topics: [
-      'Blender interface and navigation',
-      '3D modeling fundamentals',
-      'Texturing and materials',
-      'Lighting and rendering',
-      'Basic animation techniques',
-      'Creating game assets',
-    ],
+      'Database concepts and relational models',
+      'SQL queries and database operations',
+      'Designing normalized database schemas',
+      'Indexing and query optimization',
+      'Working with MySQL relational databases',
+      'Introduction to NoSQL with MongoDB',
+      'Connecting databases with backend applications'
+    ]
   },
   {
     id: 7,
-    title: 'Database Design & Management',
-    description: 'Master MySQL and MongoDB databases',
+    title: 'Programming Languages',
+    description: 'Choose the programming language you want to learn and build strong programming fundamentals through personalized guidance.',
     color: 'green',
     topics: [
-      'Relational database design with MySQL',
-      'SQL queries and optimization',
-      'NoSQL concepts with MongoDB',
-      'Data modeling best practices',
-      'Database security and backup',
-      'Integration with applications',
-    ],
+      'Programming fundamentals and problem solving',
+      'Python for scripting and automation',
+      'C and C++ for system-level programming',
+      'Java for object-oriented development',
+      'JavaScript for web development',
+      'Dart and Flutter for cross-platform applications',
+      'Writing clean, efficient, and maintainable code'
+    ]
   },
   {
     id: 8,
-    title: 'Modern Web Development',
-    description: 'Learn TailwindCSS, Vite, and modern tools',
+    title: 'Software Engineering Principles',
+    description: 'Learn the principles, tools, and practices used to design, build, and deploy reliable software systems.',
     color: 'blue',
     topics: [
-      'Responsive design with TailwindCSS',
-      'Fast development with Vite',
-      'Component-based architecture',
-      'Modern JavaScript/TypeScript',
-      'Build optimization techniques',
-      'Production deployment',
-    ],
+      'Software development lifecycle (SDLC)',
+      'Clean code practices and coding standards',
+      'Design patterns and software architecture basics',
+      'Version control and collaboration using Git',
+      'Testing, debugging, and code quality practices',
+      'Containerization with Docker',
+      'Deployment and orchestration using Kubernetes'
+    ]
   },
   {
     id: 9,
-    title: 'Docker & Kubernetes',
-    description: 'Containerization and orchestration for modern apps',
-    color: 'purple',
+    title: 'Interview Preparation',
+    description: 'Prepare for technical interviews with structured practice and real-world problem solving.',
+    color: 'green',
     topics: [
-      'Docker fundamentals and containers',
-      'Creating and managing Docker images',
-      'Docker Compose for multi-container apps',
-      'Introduction to Kubernetes',
-      'Deploying and scaling applications',
-      'CI/CD with containers',
-    ],
+      'Coding interview problem solving strategies',
+      'Common data structure interview questions',
+      'Algorithm optimization techniques',
+      'System design basics for interviews',
+      'Mock technical interview sessions',
+      'Resume and portfolio guidance',
+      'Problem solving under time constraints'
+    ]
   },
+  {
+    id: 10,
+    title: 'Custom Learning Path',
+    description: 'Design your own course by selecting topics from different courses based on your goals, with lifetime mentorship and continuous support.',
+    color: 'green',
+    topics: [
+      'Choose topics from multiple available courses',
+      'Create a personalized learning roadmap',
+      'Focus on the technologies and skills you want',
+      'Project-based learning tailored to your goals',
+      'Guidance for placements and technical interviews',
+      'Support for hackathons and real-world projects',
+      'Lifetime mentorship and learning support'
+    ]
+  }
 ];
 
 const colorClasses = {
@@ -189,11 +215,88 @@ export default function CoursePage() {
             </h1>
             <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto">
               Choose from a wide range of courses designed to help you master programming,
-              web development, game design, and more.
+              web development, game design, and more
             </p>
             <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto">
-              Pricing is personalized based on your experience level and learning mode.
+              Contact me to create your own learning path
             </p>
+          </motion.div>
+
+          {/* Note Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-12 max-w-4xl mx-auto"
+          >
+            <div className="glass border-2 border-accent-green/30 rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-8 bg-accent-green rounded-full"></div>
+                <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
+                  Note
+                </h2>
+              </div>
+              
+              <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-accent-green/50 scrollbar-track-secondary/20 pr-2 space-y-4 text-text-secondary">
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-green">🚀 What You'll Get</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Practical learning focused on real-world projects and problem solving
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-green">🧩 Custom Learning Path</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Pick topics from different courses and build a learning plan tailored to your goals
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-green">💰 Pricing</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Pricing depends on your chosen topics, learning path, and mentoring mode
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-blue">💻 Projects & Hackathons</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Guidance to build strong projects and participate in hackathons confidently
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-green">🎯 Placement Preparation</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Interview preparation, coding practice, and resume guidance for placements
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-purple">👨‍🏫 Mentorship</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                1-on-1 personalized mentoring with continuous guidance
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-purple">♾️ Lifetime Support</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Ongoing support for learning, projects, placements, and career growth with no hidden charges
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-accent-blue">⏱️ Flexible Schedule</h3>
+              <p className="text-sm md:text-base leading-relaxed">
+                Sessions scheduled based on your availability
+              </p>
+            </div>
+
+
+          </div>
+            </div>
           </motion.div>
 
           {/* Course Grid */}
@@ -257,6 +360,7 @@ export default function CoursePage() {
               );
             })}
           </div>
+          
         </div>
       </section>
     </main>

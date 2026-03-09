@@ -60,6 +60,31 @@ export default function Teach() {
   return (
     <SectionWrapper id="teach">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="flex items-center justify-between md:col-span-2 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            What I <span className="text-accent-green">Teach</span>
+          </h2>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            whileHover={{ scale: 1.05, x: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => router.push('/course')}
+            className="group flex items-center gap-3 px-8 py-4 bg-accent-green text-primary font-bold text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all"
+          >
+            <span>Explore All Courses</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </motion.div>
+          </motion.button>
+        </div>
+
         {/* Left Side - Teaching Categories */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -68,10 +93,6 @@ export default function Teach() {
           transition={{ duration: 0.6 }}
           className="space-y-8 order-2 md:order-1"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            What I <span className="text-accent-green">Teach</span>
-          </h2>
-
           <div className="space-y-6">
             {teachingCategories.map((category, idx) => {
               const colors = colorClasses[category.color as keyof typeof colorClasses];
@@ -103,25 +124,6 @@ export default function Teach() {
             })}
           </div>
 
-          {/* Explore Courses Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            whileHover={{ scale: 1.05, x: 5 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => router.push('/course')}
-            className="group flex items-center gap-3 px-8 py-4 bg-accent-green text-primary font-bold text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all"
-          >
-            <span>Explore All Courses</span>
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </motion.div>
-          </motion.button>
         </motion.div>
 
         {/* Right Side - Large Developer Symbol */}
@@ -130,8 +132,9 @@ export default function Teach() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center order-1 md:order-2"
+          className="flex flex-col items-center md:items-end gap-8 order-1 md:order-2"
         >
+
           <div className="relative">
             {/* Glowing background */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent-green/30 to-accent-purple/30 rounded-full blur-3xl"></div>
