@@ -240,7 +240,7 @@ export default function CoursePage() {
               <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-accent-green/50 scrollbar-track-secondary/20 pr-2 space-y-4 text-text-secondary">
 
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-accent-green">🚀 What You'll Get</h3>
+              <h3 className="text-lg font-semibold text-accent-green">🚀 What You&apos;ll Get</h3>
               <p className="text-sm md:text-base leading-relaxed">
                 Practical learning focused on real-world projects and problem solving
               </p>
