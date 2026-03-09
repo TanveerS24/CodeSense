@@ -4,7 +4,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FaLinkedin, FaInstagram, FaGithub, FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
-import { useSearchParams } from 'next/navigation';
+import { ReadonlyURLSearchParams } from 'next/navigation';
 import SectionWrapper from '../SectionWrapper';
 
 const contactMethods = [
@@ -51,8 +51,11 @@ const colorClasses = {
   purple: 'text-accent-purple hover:glow-purple',
 };
 
-export default function Contact() {
-  const searchParams = useSearchParams();
+interface ContactProps {
+  searchParams: ReadonlyURLSearchParams;
+}
+
+export default function Contact({ searchParams }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

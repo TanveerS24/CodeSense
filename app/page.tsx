@@ -1,11 +1,12 @@
 'use client';
 
+import { Suspense } from 'react';
 import Home from '@/components/sections/Home';
 import About from '@/components/sections/About';
 import Teach from '@/components/sections/Teach';
 import WhyChooseMe from '@/components/sections/WhyChooseMe';
 import Projects from '@/components/sections/Projects';
-import Contact from '@/components/sections/Contact';
+import ContactSearchParamsWrapper from '@/components/sections/ContactSearchParamsWrapper';
 
 export default function Page() {
   return (
@@ -16,7 +17,9 @@ export default function Page() {
       <Teach />
       <WhyChooseMe />
       <Projects />
-      <Contact />
+      <Suspense fallback={<div className="h-screen" />}>
+        <ContactSearchParamsWrapper />
+      </Suspense>
     </main>
   );
 }
