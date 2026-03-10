@@ -96,20 +96,18 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      initial={false}
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'glass shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             onClick={() => router.push('/')}
-            className="text-xl md:text-2xl font-bold font-mono cursor-pointer"
+            className="text-lg sm:text-xl md:text-2xl font-bold font-mono cursor-pointer pr-10 md:pr-0"
           >
             <span className="text-accent-green">&lt;</span>
             <span className="text-text-primary">Tanveer</span>
@@ -143,7 +141,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-text-primary text-3xl"
+            className="md:hidden absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-[60] text-text-primary text-2xl sm:text-3xl"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
@@ -159,9 +157,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass border-t border-white/10"
+            className="md:hidden glass border-t border-white/10 max-h-[calc(100vh-4rem)] overflow-y-auto"
           >
-            <div className="px-6 py-4 space-y-3">
+            <div className="px-4 sm:px-6 py-4 space-y-3">
               {navItems.map((item) => {
                 const isActive = item.id === activeItemId;
                 return (

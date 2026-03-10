@@ -59,9 +59,9 @@ export default function Teach() {
 
   return (
     <SectionWrapper id="teach">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div className="flex items-center justify-between md:col-span-2 mb-6">
-          <h2 className="text-4xl md:text-5xl font-bold">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="flex items-start md:items-center justify-between md:col-span-2 mb-6 gap-3 sm:gap-4 md:gap-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             What I <span className="text-accent-green">Teach</span>
           </h2>
 
@@ -73,7 +73,7 @@ export default function Teach() {
             whileHover={{ scale: 1.05, x: 5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => router.push('/course')}
-            className="group flex items-center gap-3 px-8 py-4 bg-accent-green text-primary font-bold text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all"
+            className="group w-auto shrink-0 flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-accent-green text-primary font-bold text-sm sm:text-base md:text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all whitespace-nowrap"
           >
             <span>Explore All Courses</span>
             <motion.div
@@ -91,7 +91,7 @@ export default function Teach() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 order-2 md:order-1"
+          className="space-y-6 md:space-y-8 order-2 md:order-1"
         >
           <div className="space-y-6">
             {teachingCategories.map((category, idx) => {
@@ -105,7 +105,7 @@ export default function Teach() {
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="space-y-3"
                 >
-                  <h3 className={`text-xl font-semibold ${colors.text}`}>
+                  <h3 className={`text-lg md:text-xl font-semibold ${colors.text}`}>
                     {category.title}
                   </h3>
                   <div className="flex flex-wrap gap-3">
@@ -113,7 +113,7 @@ export default function Teach() {
                       <motion.div
                         key={itemIdx}
                         whileHover={{ scale: 1.05, y: -2 }}
-                        className={`px-4 py-2 glass border-2 ${colors.border} ${colors.bg} rounded-lg transition-all cursor-default`}
+                        className={`px-3 sm:px-4 py-1.5 sm:py-2 glass border-2 ${colors.border} ${colors.bg} rounded-lg transition-all cursor-default`}
                       >
                         <span className="text-text-primary font-medium">{item}</span>
                       </motion.div>
@@ -126,20 +126,17 @@ export default function Teach() {
 
         </motion.div>
 
-        {/* Right Side - Large Developer Symbol */}
+        {/* Right Side - Desktop Logo */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center md:items-end gap-8 order-1 md:order-2"
+          className="hidden md:flex flex-col items-center md:items-end gap-6 md:gap-8 order-1 md:order-2"
         >
-
           <div className="relative">
-            {/* Glowing background */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent-green/30 to-accent-purple/30 rounded-full blur-3xl"></div>
 
-            {/* Large code symbol */}
             <motion.div
               animate={{
                 scale: [1, 1.05, 1],
@@ -150,14 +147,13 @@ export default function Teach() {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="relative glass rounded-3xl p-12 md:p-16 lg:p-20 glow-green"
+              className="relative glass rounded-3xl p-16 lg:p-20 glow-green"
             >
-              <div className="text-9xl md:text-[12rem] lg:text-[16rem] font-mono font-bold text-accent-green">
+              <div className="text-[12rem] lg:text-[16rem] font-mono font-bold text-accent-green">
                 &lt;/&gt;
               </div>
             </motion.div>
 
-            {/* Floating binary */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

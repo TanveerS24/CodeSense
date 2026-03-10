@@ -200,24 +200,24 @@ export default function CoursePage() {
   return (
     <main className="relative min-h-screen bg-primary">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-24">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center space-y-6 mb-16"
+            className="text-center space-y-4 sm:space-y-6 mb-12 md:mb-16"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
               <span className="text-accent-green">&lt;</span>
               <span className="text-text-primary">Courses</span>
               <span className="text-accent-green">/&gt;</span>
             </h1>
-            <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto">
+            <p className="text-text-secondary text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
               Choose from a wide range of courses designed to help you master programming,
               web development, game design, and more
             </p>
-            <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto">
+            <p className="text-text-secondary text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
               Contact me to create your own learning path
             </p>
           </motion.div>
@@ -229,10 +229,10 @@ export default function CoursePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-12 max-w-4xl mx-auto"
           >
-            <div className="glass border-2 border-accent-green/30 rounded-2xl p-6 md:p-8">
+            <div className="glass border-2 border-accent-green/30 rounded-2xl p-4 sm:p-6 md:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-1 h-8 bg-accent-green rounded-full"></div>
-                <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary">
                   Note
                 </h2>
               </div>
@@ -300,7 +300,7 @@ export default function CoursePage() {
           </motion.div>
 
           {/* Course Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {courses.map((course, idx) => {
               const colors = colorClasses[course.color as keyof typeof colorClasses];
               return (
@@ -310,14 +310,14 @@ export default function CoursePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className={`glass border-2 ${colors.border} ${colors.borderHover} ${colors.glow} rounded-2xl p-6 transition-all ${colors.shadow} shadow-xl flex flex-col`}
+                  className={`glass border-2 ${colors.border} ${colors.borderHover} ${colors.glow} rounded-2xl p-5 sm:p-6 transition-all ${colors.shadow} shadow-xl flex flex-col`}
                 >
                   {/* Course Header */}
                   <div className="space-y-3 mb-6">
                     <div className={`inline-block px-4 py-1 ${colors.bg} ${colors.text} rounded-full text-sm font-semibold`}>
                       Course {course.id}
                     </div>
-                    <h3 className={`text-2xl font-bold ${colors.text}`}>
+                    <h3 className={`text-xl sm:text-2xl font-bold ${colors.text}`}>
                       {course.title}
                     </h3>
                     <p className="text-text-secondary text-sm">

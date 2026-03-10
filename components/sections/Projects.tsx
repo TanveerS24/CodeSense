@@ -106,13 +106,13 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.05, y: -8 }}
-      className={`glass border ${colors.border} rounded-xl p-6 transition-all ${colors.glow} cursor-default h-full bg-gradient-to-br ${colors.gradient}`}
+      className={`glass border ${colors.border} rounded-xl p-5 sm:p-6 transition-all ${colors.glow} cursor-default h-full bg-gradient-to-br ${colors.gradient}`}
     >
       <div className="space-y-4">
-        <div className={`text-4xl ${colors.icon}`}>
+        <div className={`text-3xl sm:text-4xl ${colors.icon}`}>
           <Icon />
         </div>
-        <h3 className="text-xl font-bold text-text-primary">{project.name}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-text-primary">{project.name}</h3>
         <p className="text-text-secondary text-sm leading-relaxed">{project.description}</p>
       </div>
     </motion.div>
@@ -131,16 +131,18 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             <span className="text-accent-purple">Projects</span>
           </h2>
-          <p className="text-text-secondary text-lg">Real-world applications and solutions</p>
+          <p className="text-text-secondary text-base md:text-lg">Real-world applications and solutions</p>
         </motion.div>
 
         {/* Completed Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {completedProjects.map((project, idx) => (
-            <ProjectCard key={idx} project={project} index={idx} />
+            <div key={idx} className={idx >= 4 ? 'hidden md:block' : ''}>
+              <ProjectCard project={project} index={idx} />
+            </div>
           ))}
         </div>
 
@@ -150,10 +152,10 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 pt-8"
+          className="hidden md:block space-y-8 pt-8"
         >
           <div className="text-center space-y-2">
-            <h3 className="text-3xl md:text-4xl font-bold text-accent-blue">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent-blue">
               Currently Under Development
             </h3>
             <div className="flex items-center justify-center gap-2 text-accent-green">
@@ -174,7 +176,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Decorative Elements */}
-        <div className="flex justify-center gap-6 pt-8">
+        <div className="flex justify-center gap-4 sm:gap-6 pt-4 sm:pt-8">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}

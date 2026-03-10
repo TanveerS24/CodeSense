@@ -8,7 +8,7 @@ import profileImage from '../images/My Image.png';
 export default function About() {
   return (
     <SectionWrapper id="about" className="bg-secondary/50">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Left Side - Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -23,7 +23,7 @@ export default function About() {
             
             {/* Profile image container */}
             <div className="relative glass rounded-full p-2 glow-blue">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-green/20 to-accent-blue/20 rounded-full flex items-center justify-center overflow-hidden">
+              <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-green/20 to-accent-blue/20 rounded-full flex items-center justify-center overflow-hidden">
                 <Image 
                   src={profileImage}
                   alt="Tanveer - Developer and Educator"
@@ -43,11 +43,11 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             About <span className="text-accent-blue">Me</span>
           </h2>
 
-          <div className="space-y-4 text-text-secondary text-base md:text-lg leading-relaxed">
+          <div className="space-y-4 text-text-secondary text-sm sm:text-base md:text-lg leading-relaxed">
             <p>
               Hi, I&apos;m <span className="text-accent-green font-semibold">Tanveer</span>.
             </p>
@@ -72,25 +72,25 @@ export default function About() {
           </div>
 
           {/* Decorative code elements */}
-          <div className="flex gap-4 pt-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="px-4 py-2 glass rounded-lg text-accent-green font-mono text-xl"
+              className="px-3 sm:px-4 py-2 glass rounded-lg text-accent-green font-mono text-lg sm:text-xl"
             >
               {'{ }'}
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="px-4 py-2 glass rounded-lg text-accent-blue font-mono text-xl"
+              className="px-3 sm:px-4 py-2 glass rounded-lg text-accent-blue font-mono text-lg sm:text-xl"
             >
               {'</>'}
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="px-4 py-2 glass rounded-lg text-accent-purple font-mono text-xl"
+              className="px-3 sm:px-4 py-2 glass rounded-lg text-accent-purple font-mono text-lg sm:text-xl"
             >
               {'( )'}
             </motion.div>

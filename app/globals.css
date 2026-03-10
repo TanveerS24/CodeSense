@@ -12,11 +12,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   @apply bg-gradient-navy text-text-primary font-sans antialiased;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Custom scrollbar */
@@ -58,5 +60,5 @@ body {
 
 /* Section spacing */
 .section-padding {
-  @apply py-20 px-6 md:px-12 lg:px-24;
+  @apply py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-24;
 }

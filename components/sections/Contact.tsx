@@ -146,7 +146,7 @@ export default function Contact({ searchParams }: ContactProps) {
 
   return (
     <SectionWrapper id="contact" className="bg-secondary/50">
-      <div className="max-w-4xl mx-auto space-y-12">
+      <div className="max-w-4xl mx-auto space-y-10 md:space-y-12">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -155,10 +155,10 @@ export default function Contact({ searchParams }: ContactProps) {
           transition={{ duration: 0.6 }}
           className="text-center space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Get In <span className="text-accent-green">Touch</span>
           </h2>
-          <p className="text-text-secondary text-lg">
+          <p className="text-text-secondary text-base md:text-lg">
             Ready to start your learning journey? Let&apos;s connect!
           </p>
         </motion.div>
@@ -169,12 +169,12 @@ export default function Contact({ searchParams }: ContactProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass rounded-2xl p-8 md:p-10 glow-green"
+          className="glass rounded-2xl p-5 sm:p-6 md:p-10 glow-green"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Field */}
             <div className="space-y-2">
-              <label htmlFor="name" className="block text-text-primary font-semibold">
+              <label htmlFor="name" className="block text-text-primary font-semibold text-sm sm:text-base">
                 Name
               </label>
               <input
@@ -190,7 +190,7 @@ export default function Contact({ searchParams }: ContactProps) {
 
             {/* Email Field */}
             <div className="space-y-2">
-              <label htmlFor="email" className="block text-text-primary font-semibold">
+              <label htmlFor="email" className="block text-text-primary font-semibold text-sm sm:text-base">
                 Email
               </label>
               <input
@@ -206,7 +206,7 @@ export default function Contact({ searchParams }: ContactProps) {
 
             {/* Message Field */}
             <div className="space-y-2">
-              <label htmlFor="message" className="block text-text-primary font-semibold">
+              <label htmlFor="message" className="block text-text-primary font-semibold text-sm sm:text-base">
                 Message
               </label>
               <textarea
@@ -226,7 +226,7 @@ export default function Contact({ searchParams }: ContactProps) {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full px-8 py-4 bg-accent-green text-primary font-bold text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full px-8 py-4 bg-accent-green text-primary font-bold text-base md:text-lg rounded-lg shadow-lg hover:shadow-accent-green/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {isSubmitting ? (
                 <>
@@ -283,7 +283,7 @@ export default function Contact({ searchParams }: ContactProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="space-y-6"
         >
-          <h3 className="text-2xl font-bold text-center text-text-primary">
+          <h3 className="text-xl sm:text-2xl font-bold text-center text-text-primary">
             Other Ways to <span className="text-accent-blue">Connect</span>
           </h3>
 
@@ -311,7 +311,7 @@ export default function Contact({ searchParams }: ContactProps) {
                     </div>
                     <div>
                       <div className="text-text-secondary text-sm">{method.label}</div>
-                      <div className="text-text-primary font-semibold text-sm">
+                      <div className="text-text-primary font-semibold text-sm break-all">
                         {method.value}
                       </div>
                     </div>
