@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaCloudUploadAlt, FaMapMarkedAlt, FaNetworkWired, FaSeedling, FaBuilding, FaMagic, FaBrain, FaFileMedical, FaCloudSun } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaMapMarkedAlt, FaNetworkWired, FaSeedling, FaBuilding, FaMagic, FaBrain, FaFileMedical, FaCloudSun, FaGithub } from 'react-icons/fa';
 import SectionWrapper from '../SectionWrapper';
 
 const completedProjects = [
@@ -131,9 +131,22 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            <span className="text-accent-purple">Projects</span>
-          </h2>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              <span className="text-accent-purple">Projects</span>
+            </h2>
+            <motion.a
+              href="https://github.com/TanveerS24"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-accent-purple/20 border border-accent-purple/50 rounded-lg text-accent-purple hover:bg-accent-purple/30 hover:glow-purple transition-colors text-sm sm:text-base font-semibold"
+            >
+              <FaGithub />
+              GitHub
+            </motion.a>
+          </div>
           <p className="text-text-secondary text-base md:text-lg">Real-world applications and solutions</p>
         </motion.div>
 
